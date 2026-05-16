@@ -5,7 +5,7 @@ export const fetchItems = createAsyncThunk(
   "items/fetchItems",
   async (listingType, { rejectWithValue }) => {
     try {
-      const res = await API.get("/items", {
+      const res = await API.get("https://smart-campus-j4fe.onrender.com/items", {
         params: { type: listingType },
       });
       return { listingType, items: res.data };
@@ -21,7 +21,7 @@ export const createItem = createAsyncThunk(
   "items/createItem",
   async (payload, { rejectWithValue }) => {
     try {
-      const res = await API.post("/items", payload);
+      const res = await API.post("https://smart-campus-j4fe.onrender.com/items", payload);
       return res.data;
     } catch (e) {
       return rejectWithValue(
