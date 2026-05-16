@@ -17,7 +17,7 @@ export const addUser = createAsyncThunk(
   "user/addUser",
   async (userData, { rejectWithValue }) => {
     try {
-      const response = await API.post("/register", userData);
+      const response = await API.post("https://smart-campus-j4fe.onrender.com/register", userData);
       return response.data;
     } catch (error) {
       return rejectWithValue("Network error");
@@ -29,7 +29,7 @@ export const login = createAsyncThunk(
   "user/login",
   async (userData, { rejectWithValue }) => {
     try {
-      const response = await API.post("/login", userData);
+      const response = await API.post("https://smart-campus-j4fe.onrender.com/login", userData);
       return response.data;
     } catch (error) {
       return rejectWithValue("Network error");
@@ -41,7 +41,7 @@ export const updateProfile = createAsyncThunk(
   "user/updateProfile",
   async (payload, { rejectWithValue }) => {
     try {
-      const response = await API.put("/profile", payload);
+      const response = await API.put("https://smart-campus-j4fe.onrender.com/profile", payload);
       return response.data;
     } catch (error) {
       const msg =
